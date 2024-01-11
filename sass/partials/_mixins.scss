@@ -1,0 +1,42 @@
+@mixin bs($bs-type: border-box) {
+	-webkit-box-sizing: $bs-type;
+	-moz-box-sizing: $bs-type;
+	box-sizing: $bs-type;
+}
+
+@mixin text-size-adjust($tsa: none) {
+	-webkit-text-size-adjust: $tsa;
+	  -moz-text-size-adjust: $tsa;
+	  -ms-text-size-adjust: $tsa;
+	  -o-text-size-adjust: $tsa;
+	  text-size-adjust: $tsa;
+
+}
+
+@mixin hyphens($hy: auto) {
+	-webkit-hyphens: $hy;
+	-moz-hyphens: $hy;
+	-ms-hyphens: $hy;
+	hyphens: $hy;
+}
+
+@mixin breakpoint($point) {
+  @if $point == xsmall {
+    @media screen and (min-width: 25em) { @content; }
+  }
+  @if $point == small {
+    @media screen and (min-width: 37em) { @content; }
+  }
+  @else if $point == medium {
+    @media screen and (min-width: 50em) { @content; }
+  }
+  @else if $point == large {
+    @media screen and (min-width: 65em)  { @content; }
+  }
+  @else if $point == mlarge {
+    @media screen and (min-width: 70em)  { @content; }
+  }
+  @else if $point == xlarge {
+    @media screen and (min-width: 80em)  { @content; }
+  }
+}

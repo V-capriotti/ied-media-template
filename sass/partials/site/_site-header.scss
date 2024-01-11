@@ -1,0 +1,46 @@
+.site-header {
+  padding: 1.125em 0;
+
+  a {
+    font-family: $font_stack_3;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  &__logo {
+    a {
+      color: $text-color;
+    }
+  }
+
+  &__nav {
+    ul {
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 1.125rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      text-transform: capitalize;
+      color: $link_color;
+
+    }
+  }
+}
+
+.header-inner {
+  @include display-flex;
+  @include justify-content(space-between);
+}
+	
+
+
+
+

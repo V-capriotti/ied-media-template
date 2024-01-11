@@ -1,0 +1,36 @@
+.post-list {
+  font-family: $font_stack_3;
+  padding: 3rem 0;
+
+  @media (min-width: 700px) {
+    padding: 2rem 0 0;
+  }
+
+  li {
+    @include display-flex;
+    padding: 1.125rem 0;
+
+    a, time {
+      font-weight: bold;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+
+    time {
+      display: block;
+      margin-top: 0.515rem;
+      color: $light-gray;
+      font-size: 0.625rem;
+    }
+  }
+
+  .post-thumb {
+    @include flex-shrink(0);
+    @include border-radius(5px);
+    margin-right: 1.125rem;
+    overflow: hidden;
+  }
+
+}

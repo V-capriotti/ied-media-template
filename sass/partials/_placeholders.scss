@@ -1,0 +1,49 @@
+%clearfix {
+	@include clearfix;
+}
+
+%block {
+	display: block;
+}
+
+%centered {
+	margin: 0 auto;
+}
+
+%inline-relative {
+	display: inline;
+	position: relative;
+}
+
+%alignright {
+	float: right;
+}
+
+%alignleft {
+	float: left;
+}
+
+%categories {
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 3px 10px;
+	@include border-radius(50px);
+	margin-right: 15px;
+	color: white;
+	@include single-transition(opacity, .2s);
+	background: transparent;
+	font-weight: 700;
+}
+
+%transition-all {
+	@include single-transition(all, 0.3s, 0s);
+}
+
+%border-box {
+	@include bs(border-box);
+}
+
+%antialiased {
+	-webkit-font-smoothing: antialiased;
+}
+

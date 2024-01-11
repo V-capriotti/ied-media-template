@@ -1,0 +1,68 @@
+@import "compass";
+@import "sass/partials/variables";
+@import "sass/partials/colors";
+@import "sass/partials/mixins";
+@import "sass/partials/typography";
+@import "sass/partials/placeholders";
+@import "sass/partials/site";
+
+
+* {
+  @include bs(border-box);
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &:before {
+    @include bs(border-box);
+  }
+
+  &:after {
+    @include bs(border-box);
+  }
+}
+
+html {
+  /*font: 131.25%/1.57 $font-stack-1;*/
+  @include text-size-adjust(none);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  /*font-size: 21px; */
+  color: $text-color;
+  @include single-transition(opacity, .3s, linear, 0s);
+  //background: #fff;
+}
+
+
+::selection {
+  color: white;
+  background-color: $link-color;
+}
+
+::-moz-selection {
+  color: white;
+  background-color: $link-color;
+}
+
+img,
+video,
+embed,
+object {
+  @extend %block;
+  max-width: 100%;
+}
+
+.bleed {
+  margin-left: -16%;
+  width: 150%;
+}
+
+
+.section-inner {
+	max-width: $section_inner__width;
+	margin: 0 auto;
+    padding: 0 1.125rem;
+}

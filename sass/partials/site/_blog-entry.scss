@@ -1,0 +1,35 @@
+.blog-entry__header {
+  padding: 2rem 0 0;
+
+  @media (min-width: 700px) {
+    padding: 3rem 0 0;
+  }
+
+  &__category {
+    padding: 1.125rem;
+    text-align: center;
+
+    a {
+      text-transform: uppercase;
+      font-family: $font_stack_3;
+      font-weight: bold;
+      font-size: 0.625rem;
+    }
+  }
+
+  &__title {
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+
+  time {
+    display: block;
+    font-family: $font_stack_3;
+    font-weight: bold;
+    color: $light-gray;
+    text-align: center;
+    font-size: 0.625rem;
+    padding: 1.125rem 0 2.5rem;
+  }
+}

@@ -1,0 +1,44 @@
+.pagination {
+  @include display-flex;
+  @include flex(100%);
+  font-family: $font_stack_3;
+  padding: 0 10px 70px;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 3em;
+  justify-content: center;
+
+  .page-numbers {
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include border-radius(4px);
+    @include single-transition(all, 0.3s, ease-out);
+    padding: 5px;
+    margin: 0 0.5em;
+    color: $text-color;
+    width: 3em;
+    height: 3em;
+  }
+
+  a.page-numbers {
+    &:hover {
+      background: $link_color;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &.next,
+    &.prev {
+      width: auto;
+      padding: 0 10px;
+    }
+
+  }
+
+  .current {
+    background: $link_color;
+    color: #fff;
+  }
+
+}

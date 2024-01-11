@@ -1,0 +1,17 @@
+.site-footer {
+
+	padding: 1.875rem 0;
+
+	&__credits {
+		@include display-flex;
+		@include justify-content(space-between);
+		font-family: $font_stack_3;
+		font-weight: bold;
+		font-size: 	0.875rem;
+
+		a {
+			color: $text-color;
+		}
+
+	}
+}

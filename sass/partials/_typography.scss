@@ -1,0 +1,171 @@
+body {
+	@extend %antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+input {
+	@extend %antialiased;
+}
+
+button {
+	@extend %antialiased;
+}
+
+h1, p, ul, ol, dl, dd, table, form, picture, figure, blockquote, pre {
+	margin-bottom: $baseline;
+	display: block;
+}
+
+
+html {
+
+	font-family: $font_stack_1;
+	font-size: 100%;
+	line-height: 1.6;
+	font-style: normal;
+	font-weight: normal;
+	
+	@include breakpoint(small) {
+		font-size: 100%;
+		line-height: 1.5;
+	}
+	
+	@include breakpoint(mlarge) {
+		font-size: 131.25%;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-stack_3;
+	font-weight: bold;
+	font-style: normal;
+	letter-spacing: -2px;
+}
+
+h1 {
+	font-size: $h1_default_size;
+	margin-bottom: ($baseline/2);
+	font-weight: bold;
+}
+
+h2 {
+	font-size: $h2_default_size;
+	margin-bottom: ($baseline/2);
+	font-weight: bold;
+}
+
+h3 {
+	font-size: $h3_default_size;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: $h4_default_size;
+	font-weight: bold;
+}
+
+h5 {
+	font-size: $h5_default_size;
+	font-weight: bold;
+}
+
+h6 {
+	font-size: $h6_default_size;
+}
+
+p {
+	line-height: 1.5;
+	margin: 0 0 1em;
+	word-break: break-all;
+	word-break: break-word;
+	
+}
+
+a {
+	@include single-transition(all, .2s, linear, 0s);
+	text-decoration: none;
+	color: $link_color;
+	
+	&:visited {
+		color: $link_visited;
+		text-decoration: inherit;
+	}
+	
+	&:hover {
+		color: $link_color;
+		text-decoration: underline;
+	}
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+figure img {
+	margin-bottom: ($baseline/4);
+}
+
+figcaption {
+	font-family: $font_stack_3;
+	font-weight: 300;
+	font-size: 0.857em;
+	color: lighten($black, 30%);
+	
+	@include breakpoint(mlarge) {
+		font-size: 0.667em;
+	}
+}
+
+.blog-entry {
+	
+	blockquote {
+		font-family: $font_stack_1;
+		color: darken($white, 50%);
+		font-weight: 400;
+		font-style: italic;
+		padding: 0 $baseline;
+		border: {
+			left: 2px solid $link-color;
+		}
+	
+	}
+}
+
+
+pre {
+	@include background(linear-gradient(to bottom, lighten($black, 93%) 50%, lighten($black, 95%) 50%));
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: 4.5em 4.5em;
+	padding: 1.125em;
+	overflow: auto;
+	border: {
+		left: 3px solid lighten($black, 60%);
+	}
+}
+
+@media print {
+	
+	* {
+		background: transparent !important;
+		color: $black !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	
+	p, 
+	h2,
+	h2 {
+		orphans: 3;
+		widows: 3;
+	}
+	
+	h2, 
+	h3 {
+		page-break-after: avoid;
+	}
+}
