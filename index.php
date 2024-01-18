@@ -1,23 +1,44 @@
 <?php get_header();
+
 ?>
+
 <main class="site-content" role="main">
 
     <div class="section-inner">
 
+        <?php 
+
+        //Array di parametri
+        $args = array(
+            'posts_per_page' => 1,
+        );
+
+        //Memorizzo il risultato della quary nella variabile $post_in_evidenza.
+        $post_in_evidenza = new WP_Query( $args );
+
+        //Inizializzare il loop
+        while( $post_in_evidenza->have_posts() ){
+            $post_in_evidenza->the_post();
+            //Memorizzo l'ID del post per evitare di stamparlo due volte
+            $post_in_evidenza_id = $post->ID;
+        
+
+        ?>
+
         <article class="blog-entry content-block">
             <header class="blog-entry__header">
-                <div class="blog-entry__header__category">
-                    <a href="">Featured</a>
+                <div class="blog-entry_header_category">
+                    <?php the_category(); ?>
                 </div>
-                <h1 class="blog-entry__header__title">Worth A Thousand Words</h1>
-                <time datetime="">April 9, 2020</time>
+                <h1 class="blog-entry_header_title"><?php the_title(); ?></h1>
+                <time datetime=""><?php the_time( 'F j, Y'); ?></time>
             </header>
-
-
+        </article>
+        <?php } ?>
         <ul class="post-list">
             <li>
                 <div class="post-thumb">
-                <img src="<?php bloginfo('template_directory');?>/assets/images/widget-1.jpg">
+                    <img src="<?php bloginfo('template_directory' );?>/assets/images/widget-1.jpg">
                 </div>
 
                 <div class="post-entry">
@@ -29,7 +50,7 @@
 
             <li>
                 <div class="post-thumb">
-                <img src="<?php bloginfo('template_directory');?>/assets/images/widget-2.jpg">
+                    <img src="<?php bloginfo('template_directory' );?>/assets/images/widget-2.jpg">
                 </div>
 
                 <div class="post-entry">
@@ -41,7 +62,7 @@
 
             <li>
                 <div class="post-thumb">
-                <img src="<?php bloginfo('template_directory');?>/assets/images/widget-3.jpg">
+                    <img src="<?php bloginfo('template_directory' );?>/assets/images/widget-3.jpg">
                 </div>
 
                 <div class="post-entry">
@@ -53,7 +74,7 @@
 
             <li>
                 <div class="post-thumb">
-                    <img src="<?php bloginfo('template_directory');?>/assets/images/widget-4.jpg">
+                    <img src="<?php bloginfo('template_directory' );?>/assets/images/widget-4.jpg">
                 </div>
 
                 <div class="post-entry">
@@ -77,9 +98,10 @@
     </div>
 
 </main>
+
 <?php get_footer();
+
 ?>
-
-
 </body>
 </html>
+
