@@ -1,11 +1,13 @@
 <?php
-
+/**
+ * * Header
+ */
 ?>
 
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Cardo|Montserrat:400,700&display=swap" rel="stylesheet">
@@ -13,7 +15,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <header class="site-header" role="banner">
     <div class="header-inner section-inner">
 
@@ -23,10 +25,18 @@
             </a>
         </div>
 
-        <?php
-        // Per includere menu di navigazione
-        get_template_part( 'template-parts/nav-menu');
-        ?>
+        <!--
+             <nav class="site-header__nav">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+-->
 
-</div>
+        <?php
+        //prende il menu di navigazione
+        get_template_part( 'template-parts/nav-menu' )
+        ?>
+    </div>
 </header>
