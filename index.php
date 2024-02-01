@@ -24,7 +24,9 @@
                 <div class="blog-entry__header__category">
                    <?php the_category( ', ' ); ?>
                 </div>
-                <h1 class="blog-entry__header__title"><?php the_title(); ?></h1>
+                <a href="<?php the_permalink(); ?> ">   
+                    <h1 class="blog-entry__header__title"><?php the_title(); ?></h1>
+                </a>
                 <time datetime=""><?php the_time( 'F j, Y' ); ?></time>
             </header>
         </article>
