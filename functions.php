@@ -6,8 +6,12 @@
 
 
  function tema_ied_enqueue_scripts_and_styles() {
-    // Inlcudo foglio di stile principlae
+    // Inlcudo foglio di stile principale
     wp_enqueue_style( 'style', get_stylesheet_uri(),  array(), wp_get_theme()->get('Version'), 'all');
+
+    // Inlcudo foglio di stile principlae
+    wp_enqueue_style('font awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
     wp_enqueue_script( 'index', get_template_directory_uri() . '/assets/js/index.js', array(), wp_get_theme()->get('Version'), true );
  }
 
