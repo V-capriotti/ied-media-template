@@ -22,25 +22,29 @@ get_header(); ?>
                         <h1 class="blog-entry__header__title"><?php the_title(); ?></h1>
                         <time datetime=""><?php the_time( 'F j, Y' ); ?></time>
                     </header>
-                    <?php the_post_thumbnail( 'custom-image');
 
-                    the_content();
-                    ?>
-                    <?php get_sidebar();?>
+        <?php 
 
+the_post_thumbnail( 'custom-image');
 
-                    </article>
-                <?php
-            }
-        } ?>
+the_content();
 
-        <?php if (has_tag()) { ?>
+        
+        if (has_tag()) { ?>
             <div class="tags-widget">
                 <?php the_tags( '<ul><li>', '</li><li>', '<ul>'); ?>
             </div>
             <?php
         }
-        ?>
+
+        get_search_form(); ?>
+        </article>
+        <?php
+        }
+    }
+
+    get_sidebar()?>
+
 
     </div>
 </main>
